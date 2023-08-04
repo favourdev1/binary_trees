@@ -3,7 +3,7 @@
 #include <string.h>
 #include "binary_trees.h"
 
-/*Original code from http://stackoverflow.com/a/13755911/5184480 */
+/* Original code from http://stackoverflow.com/a/13755911/5184480 */
 
 /**
  * print_t - Stores recursively each level in an array of strings
@@ -40,7 +40,6 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 			s[depth - 1][offset - width / 2 + i] = '-';
 		s[depth - 1][offset + left + width / 2] = '.';
 	}
-
 	return (left + width + right);
 }
 
@@ -84,7 +83,6 @@ void binary_tree_print(const binary_tree_t *tree)
 			return;
 		memset(s[i], 32, 255);
 	}
-
 	print_t(tree, 0, 0, s);
 	for (i = 0; i < height + 1; i++)
 	{
@@ -94,10 +92,8 @@ void binary_tree_print(const binary_tree_t *tree)
 				break;
 			s[i][j] = '\0';
 		}
-
 		printf("%s\n", s[i]);
 		free(s[i]);
 	}
-
 	free(s);
 }
